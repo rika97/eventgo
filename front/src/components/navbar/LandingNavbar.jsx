@@ -10,9 +10,9 @@ import ConnectButton from '../ConnectButton';
 
 const Menu = () => (
   <>
-  <p><a href="#home">Home</a></p>
-  <p><a href="#about">What is {APP_NAME}?</a></p>
-  <p><a href="#possibility">Why {APP_NAME}?</a></p>
+  <p><a href="#home">ホーム</a></p>
+  <p><a href="#about">{APP_NAME}とは何か</a></p>
+  <p><a href="#possibility">{APP_NAME}で出来ること</a></p>
   </>
 )
 

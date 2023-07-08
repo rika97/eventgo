@@ -17,19 +17,19 @@ a {
 .gradient__bg {
 
     /* ff 3.6+ */
-    background:-moz-radial-gradient(circle at 3% 25%, #0d66b4 0%, rgba(99, 183, 219, 1) 0%, rgba(179, 222, 227, 1) 100%);
+    background:-moz-radial-gradient(circle at 3% 25%, #0d66b4 0%, #0d66b4 0%, #0d66b4 100%);
 
     /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 3% 25%, #0d66b4 0%, rgba(99, 183, 219, 1) 0%, rgba(179, 222, 227, 1) 100%);
+    background:-webkit-radial-gradient(circle at 3% 25%, #0d66b4 0%, #0d66b4 0%, #0d66b4 100%);
 
     /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 3% 25%, #0d66b4 0%, rgba(99, 183, 219, 1) 0%, rgba(179, 222, 227, 1) 100%);
+    background:-o-radial-gradient(circle at 3% 25%, #0d66b4 0%, #0d66b4 0%, #0d66b4 100%);
 
     /* ie 10+ */
-    background:-ms-radial-gradient(circle at 3% 25%, #0d66b4 0%, rgba(99, 183, 219, 1) 0%, rgba(179, 222, 227, 1) 100%);
+    background:-ms-radial-gradient(circle at 3% 25%, #0d66b4 0%, #0d66b4 0%, #0d66b4 100%);
 
     /* global 92%+ browsers support */
-    background:radial-gradient(circle at 3% 25%, #0d66b4 0%, rgba(99, 183, 219, 1) 0%, rgba(179, 222, 227, 1) 100%);
+    background:radial-gradient(circle at 3% 25%, #0d66b4 0%, #0d66b4 0%, #0d66b4 100%);
 
 }
 

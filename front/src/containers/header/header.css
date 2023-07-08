@@ -53,8 +53,8 @@
 }
 
 .redlist__header-content__input button {
-    background: #000dfc;
-    border-radius: 0px 5px 5px 0px;
+    background: #7ac8d9;
+    border-radius: 5px 5px 5px 5px;
     flex: 0.6;
     width: 100%;
     min-height: 50px;

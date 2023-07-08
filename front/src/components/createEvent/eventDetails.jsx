@@ -19,6 +19,15 @@ const EventDetails = () => {
         </div>
         <div>
             <TextField
+                sx={{width: 350}}
+                id="outlined-textarea"
+                label="場所"
+                placeholder="場所"
+                multiline
+            />
+        </div>
+        <div>
+            <TextField
                 sx={{width: 350, top: 10}}
                 id="outlined-textarea"
                 label="概要"

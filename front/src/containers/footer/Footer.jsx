@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.css';
-import redlistlogo from '../../assets/logo.png'
+import redlistlogo from '../../assets/logo_transparent.png'
 import { APP_NAME } from '../../constants';
 
 const Footer = () => {
@@ -14,9 +14,9 @@ const Footer = () => {
           </div>
           <div className='redlist__footer-links_div'>
             <h4>Links</h4>
-            <p><a href='/privacy'>Privacy Policy</a></p>
-            <p><a href='/terms'>Terms and Conditions</a></p>
-            <p><a href='/contact'>Contact</a></p>
+            <p><a href='/privacy'>個人情報保護方針</a></p>
+            <p><a href='/terms'>会社案内</a></p>
+            <p><a href='/contact'>サイトマップ</a></p>
           </div>
         </div>
         <div className='redlist__footer-copyright'>

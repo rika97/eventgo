@@ -2,8 +2,8 @@ import { createTheme } from "@mui/material";
 import { Theta, ThetaTestnet } from "@usedapp/core";
 import { JsonRpcProvider } from "@ethersproject/providers";
 
-export const APP_NAME = 'Redlist'
-export const APP_DESC = 'Redlist はイベントに参加してNFTを集めることができるアプリです'
+export const APP_NAME = 'Event Go'
+export const APP_DESC = 'Event Go はイベントに参加してNFTを集めることができるサービスです'
 
 export const APP_THEME = createTheme({
     palette: {
@@ -11,7 +11,7 @@ export const APP_THEME = createTheme({
             main: '#b8b8b8'
         },
         success: {
-            main: '#0097a7'
+            main: '#0d66b4'
         },
     }
 });
