@@ -37,7 +37,7 @@ const EventTabs = () => {
               <AllEventCards type={"all"} />
             </TabPanel>
             <TabPanel value="6">
-              <AllEventCards type={"technology"} />
+              <AllEventCards type={"テクノロジー"} />
             </TabPanel>
           </TabContext>
         </Box>
