@@ -154,7 +154,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                     <ListItemText primary="新規イベント作成" />
                     </ListItemButton>
                 </ListItem>
-                <ListItem disablePadding onClick={() => {navigate("/createdEvent/createdEvents");}}>
+                <ListItem disablePadding onClick={() => {navigate("/createdEvents");}}>
                     <ListItemButton>
                     <ListItemIcon>
                         <LibraryAddCheckIcon style={{ color: '#424242' }} />

@@ -4,5 +4,8 @@ module.exports = {
     // Other rules...
     plugins: [
         new NodePolyfillPlugin()
-    ]
+    ],
+    experiments: {
+        topLevelAwait: true
+      }
 }

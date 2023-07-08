@@ -4,3 +4,4 @@ export { default as LandingNavbar } from './navbar/LandingNavbar';
 export { default as EventDetails } from './createEvent/eventDetails';
 export { default as EventCompleted } from './createEvent/eventCompleted';
 export { default as Feedback } from './feedback/feedback';
+export { default as EventCards } from './createdEvents/eventCards';

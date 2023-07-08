@@ -5,6 +5,9 @@ import { styled } from '@mui/material/styles';
 
 import UserSidebar from '../../../components/navbar/UserSidebar';
 
+import { db } from "../../../config/firebase";
+import { doc, getDoc } from 'firebase/firestore';
+
 const MyPage = ({account}) => {
 
   const navigate = useNavigate();
@@ -41,12 +44,14 @@ const MyPage = ({account}) => {
     justifyContent: 'flex-end',
   }));
 
+
   return (
     <div>
       <Box sx={{ display: 'flex' }}>
         <UserSidebar open={open} setOpen={setOpen} pageTitle="マイページ" />
         <Main open={open}>
           <DrawerHeader />
+          {/* check if user exists, if not take them to signup page */}
         </Main>
       </Box>
     </div>

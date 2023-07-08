@@ -18,7 +18,7 @@ const Header = () => {
           <div className='redlist__header-content__input'>
             {/* <input id="email" type="email" placeholder="Your Email Address" autoComplete="on"></input> */}
             {account ? 
-              <button onClick={() => navigate('/mypage')}>Go to transactions</button> :
+              <button onClick={() => navigate('/mypage')}>マイページへ移動する</button> :
               <ConnectButton text="ワォレットを連携する" />
             }
           </div>

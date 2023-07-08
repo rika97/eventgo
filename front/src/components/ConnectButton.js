@@ -8,7 +8,7 @@ export default function ConnectButton({text}) {
 
   function handleConnectWallet() {
     activateBrowserWallet();
-    console.log("connect wallet", account);
+    console.log("ワォレットを連携する", account);
   }
 
   if (account && amount) {
