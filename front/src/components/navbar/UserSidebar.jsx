@@ -105,8 +105,8 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
             open={open}
             PaperProps={{
               sx: {
-                backgroundColor: "#b3dee3",
-                color: "#424242",
+                backgroundColor: "#0d66b4",
+                color: "#ffffff",
               }
             }}
         >
@@ -125,7 +125,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/mypage");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <AssessmentIcon style={{ color: '#424242' }} />
+                        <AssessmentIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
                     <ListItemText primary="マイページ" />
                     </ListItemButton>
@@ -133,15 +133,15 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/timeline");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <FeedIcon style={{ color: '#424242' }} />
+                        <FeedIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
-                    <ListItemText primary="タイムライン" />
+                    <ListItemText primary="イベント一覧" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding onClick={() => {navigate("/gallery");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <CollectionsIcon style={{ color: '#424242' }} />
+                        <CollectionsIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
                     <ListItemText primary="ギャラリー" />
                     </ListItemButton>
@@ -149,7 +149,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/createEvent/createEvent");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <AssessmentIcon style={{ color: '#424242' }} />
+                        <AssessmentIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
                     <ListItemText primary="新規イベント作成" />
                     </ListItemButton>
@@ -157,7 +157,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/createdEvents");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <LibraryAddCheckIcon style={{ color: '#424242' }} />
+                        <LibraryAddCheckIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
                     <ListItemText primary="作成したイベント" />
                     </ListItemButton>
@@ -165,7 +165,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={logout}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <LogoutIcon style={{ color: '#424242' }} />
+                        <LogoutIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
                     <ListItemText primary="Logout" />
                     </ListItemButton>

@@ -30,11 +30,11 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
-    color: #63b7db;
+    color: #b8b8b8;
 }
 
 .redlist__possibility-content h4:last-child {
-    color: #b3dee3;
+    color: #0d66b4;
 }
 
 .redlist__possibility-content h1 {

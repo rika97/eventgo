@@ -8,7 +8,7 @@ export const APP_DESC = 'Redlist はイベントに参加してNFTを集める�
 export const APP_THEME = createTheme({
     palette: {
         primary: {
-            main: '#63b7db'
+            main: '#b8b8b8'
         },
         success: {
             main: '#0097a7'

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 
 import UserSidebar from '../../../components/navbar/UserSidebar';
+import { AllEventCards, EventTabs } from '../../../components';
 
 const Timeline = ({account}) => {
 
@@ -44,9 +45,10 @@ const Timeline = ({account}) => {
   return (
     <div>
       <Box sx={{ display: 'flex' }}>
-        <UserSidebar open={open} setOpen={setOpen} pageTitle="タイムライン" />
+        <UserSidebar open={open} setOpen={setOpen} pageTitle="イベント一覧" />
         <Main open={open}>
           <DrawerHeader />
+          <EventTabs />
         </Main>
       </Box>
     </div>

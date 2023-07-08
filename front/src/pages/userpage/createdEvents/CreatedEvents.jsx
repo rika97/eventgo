@@ -48,7 +48,6 @@ const CreatedEvents = ({account}) => {
         <UserSidebar open={open} setOpen={setOpen} pageTitle="作成したイベント" />
         <Main open={open}>
           <DrawerHeader />
-          <Typography>Events</Typography>
           <EventCards />
         </Main>
       </Box>

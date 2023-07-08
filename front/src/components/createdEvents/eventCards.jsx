@@ -29,7 +29,7 @@ function EventCards () {
   return (
     <div>
         <Grow in>
-            <Grid container justify="center" alignItems='flex-start' spacing={1}>
+            <Grid container justify="center" alignItems='flex-start' spacing={1} >
             {eventList.map((event) => {
                 if (event.userId === "0x82BD5fD0F73bA74f335917991519b151f7eD6E02") return(
                 <div>
@@ -47,7 +47,7 @@ function EventCards () {
                                         <Typography gutterBottom variant='h5'>{event.title}</Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <Button size="small">View Details</Button>
+                                        <Button size="small">詳細を確認</Button>
                                     </CardActions>
                                 </Card>
                             </div>
