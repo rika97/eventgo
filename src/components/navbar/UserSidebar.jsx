@@ -1,21 +1,19 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { styled, useTheme } from '@mui/material/styles';
-import { Avatar, Box, Button, Drawer, CssBaseline, Toolbar, List, Typography, Divider, 
+import { Box, Drawer, CssBaseline, Toolbar, List, Typography, Divider, 
   IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import PaidIcon from '@mui/icons-material/Paid';
-import ListAltIcon from '@mui/icons-material/ListAlt';
-import Inventory2Icon from '@mui/icons-material/Inventory2';
 import AssessmentIcon from '@mui/icons-material/Assessment';
-import InfoIcon from '@mui/icons-material/Info';
-import PersonIcon from '@mui/icons-material/Person';
+import FeedIcon from '@mui/icons-material/Feed';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 import logo from '../../assets/logo.png';
@@ -135,7 +133,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/timeline");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <AssessmentIcon style={{ color: '#424242' }} />
+                        <FeedIcon style={{ color: '#424242' }} />
                     </ListItemIcon>
                     <ListItemText primary="タイムライン" />
                     </ListItemButton>
@@ -143,9 +141,25 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/gallery");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <AssessmentIcon style={{ color: '#424242' }} />
+                        <CollectionsIcon style={{ color: '#424242' }} />
                     </ListItemIcon>
                     <ListItemText primary="ギャラリー" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding onClick={() => {navigate("/createEvent/createEvent");}}>
+                    <ListItemButton>
+                    <ListItemIcon>
+                        <AssessmentIcon style={{ color: '#424242' }} />
+                    </ListItemIcon>
+                    <ListItemText primary="新規イベント作成" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding onClick={() => {navigate("/createdEvent/createdEvents");}}>
+                    <ListItemButton>
+                    <ListItemIcon>
+                        <LibraryAddCheckIcon style={{ color: '#424242' }} />
+                    </ListItemIcon>
+                    <ListItemText primary="作成したイベント" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding onClick={logout}>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Landing, MyPage, Gallery, Timeline } from './pages';
-import { Route, Routes, Outlet, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Outlet } from 'react-router-dom';
+
+import { Landing, MyPage, Gallery, Timeline, CreatedEvent, CreateEvent } from './pages';
+import { EventCompleted, Feedback } from './components';
 
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
@@ -39,6 +41,14 @@ const App = () => {
           <Route path="mypage" element={<MyPage account={account} />} />
           <Route path="gallery" element={<Gallery account={account} />} />
           <Route path="timeline" element={<Timeline account={account} />} />
+          <Route path="createEvent" element={<Outlet />}>
+            <Route path="createEvent" element={<CreateEvent account={account} />} />
+            <Route path="eventCompleted" element={<EventCompleted account={account} />} />
+          </Route>
+          <Route path="createdEvent" element={<Outlet />}>
+            <Route path="createdEvents" element={<CreatedEvent account={account} />} />
+          </Route>
+          <Route path="feedback" element={<Feedback account={account} />} />
         </Routes>
       </div>
     </ThemeProvider>
