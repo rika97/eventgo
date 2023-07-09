@@ -35,11 +35,11 @@ const EventDetails = () => {
         setFile(event.target.files[0]);
     }
     function handleStartTime (time) {
-        setEvent({ ...event, startTime: time })
+        setEvent({ ...event, startTime: time.toString() })
       };
 
     function handleEndTime (time) {
-        setEvent({ ...event, endTime: time })
+        setEvent({ ...event, endTime: time.toString() })
       };
     
  
@@ -50,8 +50,6 @@ const EventDetails = () => {
  
         const storageRef = ref(storage, `/eventPhotos/${file.name}`);
  
-        // progress can be paused and resumed. It also exposes progress updates.
-        // Receives the storage reference and the file to upload.
         const uploadTask = uploadBytesResumable(storageRef, file);
  
         uploadTask.on(
@@ -172,7 +170,7 @@ const EventDetails = () => {
                     variant="contained"
                     onClick={() => {
                         addEvent();
-                        // navigate("/createEvent/eventCompleted");
+                        navigate("/createEvent/eventCompleted");
                     }}
                 >作成</Button>
             </div>
