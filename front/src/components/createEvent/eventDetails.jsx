@@ -7,30 +7,41 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 import storage from '../../config/firebase';
+import { db } from '../../config/firebase';
+import { collection, addDoc } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL  } from "firebase/storage";
+
 const EventDetails = () => {
     const [file, setFile] = useState("");
     const [percent, setPercent] = useState(0);
-    const [startTime, setStartTime] = useState(new Date());
-    const [endTime, setEndTime] = useState(new Date());
+    const [event, setEvent] = useState({title: '', location: '', photoURI: '', startTime: new Date(), endTime: new Date(), type: '', userId: '', userName: '', details: ''});
+
     const navigate = useNavigate();
     const types = [
-        '音楽',
-        '映像',
-        'お祭り',
-        '食べもの',
-        '展示会',
-        'テクノロジー',
-        'ビジネス',
-        'ゲーム',
-        'スポーツ',
-        '教育',
-        'その他'
+        { label: '音楽', category: 'music'},
+        { label: '映像', category: 'film'},
+        { label: 'お祭り', category: 'festival'},
+        { label: '食べもの', category: 'food'},
+        { label: '展示会', category: 'expo'},
+        { label: 'テクノロジー', category: 'tech'},
+        { label: 'ビジネス', category: 'business'},
+        { label: 'ゲーム', category: 'game'},
+        { label: 'スポーツ', category: 'sports'},
+        { label: '教育', category: 'education'},
+        { label: 'その他', category: 'others'}
       ];
 
       function handleChange(event) {
         setFile(event.target.files[0]);
     }
+    function handleStartTime (time) {
+        setEvent({ ...event, startTime: time })
+      };
+
+    function handleEndTime (time) {
+        setEvent({ ...event, endTime: time })
+      };
+    
  
     const handleUpload = () => {
         if (!file) {
@@ -58,10 +69,24 @@ const EventDetails = () => {
                 // download url
                 getDownloadURL(uploadTask.snapshot.ref).then((url) => {
                     console.log(url);
+                    setEvent({ ...event, photoURI: url })
                 });
             }
         );
     };
+
+    const addEvent = async (e) => {
+       
+        try {
+            const docRef = await addDoc(collection(db, "events"), {
+              event: event
+            });
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+    }
+
   return (
     <div>
         <Typography>下記のイベント情報を入力してください</Typography>
@@ -74,15 +99,20 @@ const EventDetails = () => {
                     placeholder="イベント名"
                     multiline
                     size="small"
+                    onChange={(e) => setEvent({ ...event, title: e.target.value })}
                 />
             </div>
             <div>
             <Autocomplete
                 disablePortal
+                loading
                 options={types}
+                getOptionLabel={(option) => option.label}
                 sx={{ width: 350, marginTop: 1 }}
                 renderInput={(params) => <TextField {...params} label="カテゴリー" />}
                 size="small"
+                isOptionEqualToValue={(option, value) => option.id === value.id}
+                onChange={(e, value) => setEvent({ ...event, type: value?.category })}
             />
             </div>
             <div>
@@ -93,14 +123,15 @@ const EventDetails = () => {
                     placeholder="場所"
                     multiline
                     size="small"
+                    onChange={(e) => setEvent({ ...event, location: e.target.value })}
                 />
             </div>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <div>
                     <DateTimePicker
                         label="開始日時"
-                        value={startTime}
-                        onChange={setStartTime}
+                        value={event.startTime}
+                        onChange={handleStartTime}
                         disablePast
                         renderInput={(params) => <TextField {...params} sx={{width: 350, marginTop: 1}} size="small" />}
                     />
@@ -108,8 +139,8 @@ const EventDetails = () => {
                 <div>
                     <DateTimePicker
                         label="終了日時"
-                        value={endTime}
-                        onChange={setEndTime}
+                        value={event.endTime}
+                        onChange={handleEndTime}
                         disablePast
                         renderInput={(params) => <TextField {...params} sx={{width: 350, marginTop: 1}} size="small" />}
                     />
@@ -132,13 +163,17 @@ const EventDetails = () => {
                     multiline
                     rows={10}
                     size="small"
+                    onChange={(e) => setEvent({ ...event, details: e.target.value })}
                 />
             </div>
             <div>
                 <Button
                     sx={{width: 350, top: 20}}
                     variant="contained"
-                    onClick={() => {navigate("/createEvent/eventCompleted");}}
+                    onClick={() => {
+                        addEvent();
+                        // navigate("/createEvent/eventCompleted");
+                    }}
                 >作成</Button>
             </div>
         </Grid>
