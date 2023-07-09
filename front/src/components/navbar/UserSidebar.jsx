@@ -9,10 +9,10 @@ import MuiAppBar from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import AssessmentIcon from '@mui/icons-material/Assessment';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import FeedIcon from '@mui/icons-material/Feed';
 import CollectionsIcon from '@mui/icons-material/Collections';
-import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
 import LogoutIcon from '@mui/icons-material/Logout';
 
@@ -125,7 +125,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/mypage");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <AssessmentIcon style={{ color: '#ffffff' }} />
+                        <AccountCircleIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
                     <ListItemText primary="マイページ" />
                     </ListItemButton>
@@ -149,7 +149,7 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={() => {navigate("/createEvent/createEvent");}}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <AssessmentIcon style={{ color: '#ffffff' }} />
+                        <AddBoxIcon style={{ color: '#ffffff' }} />
                     </ListItemIcon>
                     <ListItemText primary="新規イベント作成" />
                     </ListItemButton>
@@ -165,9 +165,9 @@ const UserSidebar = ({ pageTitle, open, setOpen }) => {
                 <ListItem disablePadding onClick={logout}>
                     <ListItemButton>
                     <ListItemIcon>
-                        <LogoutIcon style={{ color: '#ffffff' }} />
+                        <LogoutIcon style={{ color: 'white' }} />
                     </ListItemIcon>
-                    <ListItemText primary="Logout" />
+                    <ListItemText primary="ログアウト" />
                     </ListItemButton>
                 </ListItem>
              

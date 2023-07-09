@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="redlist__header section__padding" id="home">
         <div className='redlist__header-content'>
-          <h1 className='gradient__text'>Event Goへようこそ </h1>
+          <h1 className='gradient__text'>イベントに参加してNFTを集めよう </h1>
           <p>テキトーな文章でかっこいいアプリっぽくする</p>
 
           <div className='redlist__header-content__input'>
