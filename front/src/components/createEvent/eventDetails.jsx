@@ -11,6 +11,8 @@ import { ref, uploadBytesResumable, getDownloadURL  } from "firebase/storage";
 const EventDetails = () => {
     const [file, setFile] = useState("");
     const [percent, setPercent] = useState(0);
+    const [startTime, setStartTime] = useState(new Date());
+    const [endTime, setEndTime] = useState(new Date());
     const navigate = useNavigate();
     const types = [
         '音楽',
@@ -35,7 +37,7 @@ const EventDetails = () => {
             alert("Please upload an image first!");
         }
  
-        const storageRef = ref(storage, `/files/${file.name}`);
+        const storageRef = ref(storage, `/eventPhotos/${file.name}`);
  
         // progress can be paused and resumed. It also exposes progress updates.
         // Receives the storage reference and the file to upload.
@@ -93,27 +95,33 @@ const EventDetails = () => {
                     size="small"
                 />
             </div>
-            {/* 作成中 */}
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <div>
                     <DateTimePicker
                         label="開始日時"
-                        minDate={new Date()}
+                        value={startTime}
+                        onChange={setStartTime}
+                        disablePast
                         renderInput={(params) => <TextField {...params} sx={{width: 350, marginTop: 1}} size="small" />}
                     />
                 </div>
                 <div>
                     <DateTimePicker
                         label="終了日時"
-                        minDate={new Date()}
+                        value={endTime}
+                        onChange={setEndTime}
+                        disablePast
                         renderInput={(params) => <TextField {...params} sx={{width: 350, marginTop: 1}} size="small" />}
                     />
                 </div>
             </LocalizationProvider>
             <div>
-                <input type="file" onChange={handleChange} accept="/image/*" />
-                <button onClick={handleUpload}>Upload to Firebase</button>
-                <p>{percent} "% done"</p>
+                <Grid sx={{marginTop: 1}}>
+                    <Typography variant="subtitle2">ヘッダー画像をアップロード:</Typography>
+                    <Button variant="outlined" size="small" component="label">画像を選択<input type="file" onChange={handleChange} accept="/image/*" hidden /></Button>
+                    <Button variant="contained" onClick={handleUpload} size="small" sx={{marginLeft: 1}}>アップロードする</Button>
+                    <Typography variant="body2">({percent}% 完了)</Typography>
+                </Grid>
             </div>
             <div>
                 <TextField

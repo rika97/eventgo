@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 
 import UserSidebar from '../navbar/UserSidebar';
 
-const EventCompleted = ({account}) => {
+const EventCompleted = ({account, randomNum}) => {
 
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const EventCompleted = ({account}) => {
         <UserSidebar open={open} setOpen={setOpen} pageTitle="新規イベント作成" />
         <Main open={open}>
           <DrawerHeader />
-          <Typography>感想収集用QRコード</Typography>
+          <Typography>感想収集用QRコード{randomNum}</Typography>
           <div>
             <Button
                 sx={{top: 20}}
