@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 
@@ -51,7 +51,11 @@ const MyPage = ({account}) => {
         <UserSidebar open={open} setOpen={setOpen} pageTitle="マイページ" />
         <Main open={open}>
           <DrawerHeader />
-          {/* check if user exists, if not take them to signup page */}
+          <Typography variant="h2">Hey, Miyu!</Typography>
+          <Button variant="contained" sx={{marginTop: 2}}>アカウント情報を変更する</Button>
+          <Typography sx={{marginTop: 4}} variant="h5" fontWeight={'bold'}>ワォレット情報</Typography>
+          <Typography sx={{marginTop: 1}} variant="h6">残高: 10.001 ETH</Typography>
+          <Typography sx={{marginTop: 1}} variant="h6">Collected: 32</Typography>
         </Main>
       </Box>
     </div>

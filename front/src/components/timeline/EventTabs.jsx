@@ -36,8 +36,38 @@ const EventTabs = () => {
             <TabPanel value="0">
               <AllEventCards type={"all"} />
             </TabPanel>
+            <TabPanel value="1">
+              <AllEventCards type={"music"} />
+            </TabPanel>
+            <TabPanel value="2">
+              <AllEventCards type={"film"} />
+            </TabPanel>
+            <TabPanel value="3">
+              <AllEventCards type={"festival"} />
+            </TabPanel>
+            <TabPanel value="4">
+              <AllEventCards type={"food"} />
+            </TabPanel>
+            <TabPanel value="5">
+              <AllEventCards type={"expo"} />
+            </TabPanel>
             <TabPanel value="6">
-              <AllEventCards type={"テクノロジー"} />
+              <AllEventCards type={"tech"} />
+            </TabPanel>
+            <TabPanel value="7">
+              <AllEventCards type={"business"} />
+            </TabPanel>
+            <TabPanel value="8">
+              <AllEventCards type={"game"} />
+            </TabPanel>
+            <TabPanel value="9">
+              <AllEventCards type={"sports"} />
+            </TabPanel>
+            <TabPanel value="10">
+              <AllEventCards type={"education"} />
+            </TabPanel>
+            <TabPanel value="11">
+              <AllEventCards type={"others"} />
             </TabPanel>
           </TabContext>
         </Box>

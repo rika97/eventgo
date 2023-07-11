@@ -55,9 +55,9 @@ function EventCards () {
     <div>
         <Grow in>
             <Grid container justify="center" alignItems='flex-start' spacing={1} >
-            {eventList.map((event) => {
+            {eventList.map((event, index) => {
                 if (event.userId === "0x82BD5fD0F73bA74f335917991519b151f7eD6E02") return(
-                <div>
+                <div key={index}>
                     <Grid item minWidth={210} sx={{marginRight: 2, marginBottom: 2}}>
                         <Paper elevation={2}>
                             <div>
@@ -72,7 +72,7 @@ function EventCards () {
                                         <Typography gutterBottom variant='h5' sx={{fontWeight: 'bold'}}>{event.title}</Typography>
                                         <Typography variant='subtitle2'>{event.location}</Typography>
                                         <Typography id="modal-modal-title" variant='subtitle2'>
-                                            {new Date(event.startTime.seconds * 1000).toLocaleDateString('ja-JP')}~{new Date(event.endTime.seconds * 1000).toLocaleDateString('ja-JP')}
+                                        {event.startTime}~{event.endTime}
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
@@ -100,7 +100,7 @@ function EventCards () {
                                                 場所: {event.location}
                                             </Typography>
                                             <Typography id="modal-modal-title" variant='subtitle2'>
-                                                日時: {new Date(event.startTime.seconds * 1000).toLocaleString('ja-JP')}~{new Date(event.endTime.seconds * 1000).toLocaleString('ja-JP')}
+                                                日時: {event.startTime}~{event.endTime}
                                             </Typography>
                                             <img src={event.photoURI} alt="photo" height='70%' />
                                             <Typography id="modal-modal-title" variant="h6" component="h2">

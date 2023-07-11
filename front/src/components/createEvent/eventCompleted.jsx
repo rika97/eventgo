@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import QRCode from "qrcode.react";
 
 import UserSidebar from '../navbar/UserSidebar';
 
-const EventCompleted = ({account, randomNum}) => {
+const EventCompleted = ({account}) => {
 
   const navigate = useNavigate();
 
@@ -47,10 +48,16 @@ const EventCompleted = ({account, randomNum}) => {
         <UserSidebar open={open} setOpen={setOpen} pageTitle="新規イベント作成" />
         <Main open={open}>
           <DrawerHeader />
-          <Typography>感想収集用QRコード{randomNum}</Typography>
+          <Typography fontWeight={'bold'}>感想収集用QRコード</Typography>
           <div>
+            <QRCode
+               value="https://redlistkddi.netlify.app/event/jf9S3LsZFrjrimBr6hBI"style={{ marginRight: 50 }}/>
+            
+            <div>
+              <Typography variant="body2">https://redlistkddi.netlify.app/event/jf9S3LsZFrjrimBr6hBI</Typography>
+            </div>
             <Button
-                sx={{top: 20}}
+                sx={{top: 20, marginRight: 100}}
                 variant="contained"
                 onClick={() => {navigate("/createEvent/eventCompleted");}}
             >保存</Button>
